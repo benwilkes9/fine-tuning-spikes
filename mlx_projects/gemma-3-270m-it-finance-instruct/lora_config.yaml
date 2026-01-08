@@ -1,0 +1,27 @@
+# MLX-LM LoRA Fine-Tuning Configuration
+
+model: mlx-community/gemma-3-270m-it-bf16
+data: data
+train: true
+fine_tune_type: lora
+adapter_path: adapters
+
+# Training hyperparameters
+batch_size: 8
+num_layers: 18
+iters: 1800
+learning_rate: 5.0e-05
+val_batches: 25
+save_every: 1800
+
+# Learning rate schedule with warmup
+lr_schedule:
+  name: cosine_decay
+  warmup: 180
+  arguments: [5.0e-05, 1620, 0.0]
+
+# LoRA parameters
+lora_parameters:
+  rank: 16
+  scale: 2.0
+  dropout: 0.1
