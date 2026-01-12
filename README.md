@@ -1,6 +1,6 @@
 # Fine-Tuning Spikes
 
-Proof of concept experiments for LLM fine-tuning using different platforms.
+Proof of concept experiments for LLM fine-tuning.
 
 ## Structure
 
@@ -13,22 +13,17 @@ Proof of concept experiments for LLM fine-tuning using different platforms.
 ## Setup
 
 ```bash
-# Install dependencies
+# Install all dependencies (MLX + SageMaker)
 uv sync
-
-# For MLX experiments (Apple Silicon)
-uv sync --extra mlx
-
-# For SageMaker experiments
-uv sync --extra sagemaker
-
-# Or install all extras
-uv sync --all-extras
 ```
 
 ## Usage
 
-Each project contains numbered Jupyter notebooks (01_data_analysis, 02_finetune_training, etc.).
+Each project contains numbered Jupyter notebooks, for example:
+
+- `01_data_analysis.ipynb` - Load and explore dataset
+- `02_finetune_training.ipynb` - Fine-tune the model
+- `03_deploy_and_evaluate.ipynb` - Deploy and evaluate
 
 ```bash
 uv run jupyter lab
