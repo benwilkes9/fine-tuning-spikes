@@ -57,6 +57,9 @@ outputs/
 *.jsonl
 data/
 
+# Source dataset files
+!mlx_projects/llama-3.2-1b-instruct-customer-support/source_data.jsonl
+
 # Logs
 *.log
 logs/
